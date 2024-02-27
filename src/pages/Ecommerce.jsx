@@ -9,7 +9,7 @@ import { earningData, SparklineAreaData , ecomPieChartData} from '../data/dummy.
 import { useStateContext } from '../contexts/ContextProvider.js'
 function Ecommerce() {
   return (
-    <div className="mt-10">
+    <div className="m-12 md:m-2">
       <div className="flex flex-wrap lg:flex-nowrap justify-center">
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-7 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
           <div className="flex justify-between items-center">
@@ -18,7 +18,7 @@ function Ecommerce() {
               <p className="text-1xl ">$63,448.78</p>
             </div>
           </div>
-          <div className="mt-6 ">
+          <div className="mt-4 ">
             <Button
               color="white"
               bgColor="blue"
@@ -55,7 +55,7 @@ function Ecommerce() {
 
       <div
         className="bg-white dark: text-gray-200
-      dark:bg-secondary-dark-bg m-3 rounded-2xl md:w-580"
+      dark:bg-secondary-dark-bg m-1 rounded-2xl md:w-580"
       >
         <div className="flex justify-around">
           <p className="font-semibold text-xl text-gray-600">Revenue Update</p>
@@ -80,7 +80,7 @@ function Ecommerce() {
             </p>
           </div>
         </div>
-        <div className="mt-10 flex gap-10 flex-wrap justify-center ">
+        <div className="mt-7 flex gap-10 flex-wrap justify-center ">
           <div className="border-r-1 border-colorm-4 pr-10">
             <div>
               <p>
@@ -93,22 +93,22 @@ function Ecommerce() {
               </p>
               <p className="text-gray-500 mt-1">Budget</p>
             </div>
-            <div className="mt-8">
+            <div className="mt-2">
               <p className="text-2xl text-gray-500  font-semibold">$48,487</p>
               <p className="text-gray-500 mt-1">Expense</p>
             </div>
-            <div className="mt-5">
+            <div className="mt-2">
               <SparkLine
                 currentColor="blue"
                 id="line-sparkLine"
                 type="Line"
-                height="80px"
+                height="60px"
                 width="250px"
                 data={SparklineAreaData}
                 color="blue"
               />
             </div>
-            <div className="mt-10">
+            <div className="mt-8">
                 <Button
                   color="white"
                   bgColor="blue"
@@ -118,7 +118,7 @@ function Ecommerce() {
               </div>
           </div>
           <div>
-            <Stacked width="320" height="360"/>
+            <Stacked width="320" height="310"/>
           </div>
         </div>
       </div>
