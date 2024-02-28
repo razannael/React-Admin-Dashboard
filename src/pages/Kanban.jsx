@@ -14,7 +14,6 @@ function Kanban() {
       <ColumnDirective key={index} {...item}/>)}
       </ColumnsDirective>
     </KanbanComponent>
-
 </div>
   )
 }
