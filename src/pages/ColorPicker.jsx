@@ -10,7 +10,7 @@ const change = (args) => {
 const CustomColorPicker = ({ id, mode }) => <ColorPickerComponent id={id} mode={mode} modeSwitcher={false} inline showButtons={false} change={change} />;
 
 const ColorPicker = () => (
-  <div className="m-2 md:m-2 mt-12 p-2 md:p-5 bg-white rounded-2xl">
+  <div className="m-2 md:m-2 mt-12 p-2 pb-1 md:p-3 bg-white rounded-2xl">
     <Header category="App" title="Color Picker" />
     <div className="text-center">
       <div id="preview" />

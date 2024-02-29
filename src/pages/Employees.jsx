@@ -4,7 +4,7 @@ import {employeesData, employeesGrid} from '../data/dummy.js'
 import Header from '../components/Header.jsx'
 const Employees = ()=> {
   return (
-    <div className='m-2 mt-16 md:m-1  p-2 md:p-10 bg-white rounded-3xl'>
+    <div className='m-2 mt-16 md:m-1  p-2 md:p-3 bg-white rounded-3xl'>
       <Header category ="Page" title ="Employees"/>
       <GridComponent 
        dataSource={employeesData}

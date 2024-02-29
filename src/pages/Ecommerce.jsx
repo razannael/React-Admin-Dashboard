@@ -8,10 +8,11 @@ import { SparkLine } from '../components/index.jsx'
 import { earningData, SparklineAreaData , ecomPieChartData} from '../data/dummy.js'
 import { useStateContext } from '../contexts/ContextProvider.js'
 function Ecommerce() {
+  const {currentColor} = useStateContext();
   return (
     <div className="m-12 md:m-2">
-      <div className="flex flex-wrap lg:flex-nowrap justify-center">
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-7 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
+      <div className="flex flex-wrap lg:flex-nowrap justify-center ">
+        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-40 rounded-xl w-full lg:w-80 p-7 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
           <div className="flex justify-between items-center">
             <div>
               <p className="font-bold text-gray-400">Earnings</p>
@@ -21,7 +22,7 @@ function Ecommerce() {
           <div className="mt-4 ">
             <Button
               color="white"
-              bgColor="blue"
+              bgColor={currentColor}
               text="Download"
               borderRadius="10px"
               style="md"
@@ -55,10 +56,10 @@ function Ecommerce() {
 
       <div
         className="bg-white dark: text-gray-200
-      dark:bg-secondary-dark-bg m-1 rounded-2xl md:w-580"
+      dark:bg-secondary-dark-bg m-10 mt-3 rounded-2xl "
       >
-        <div className="flex justify-around">
-          <p className="font-semibold text-xl text-gray-600">Revenue Update</p>
+        <div className="flex justify-around pt-5 ">
+          <p className=" dark:text-gray-400 font-semibold text-xl text-gray-600">Revenue Update</p>
           <div className="flex items-center gap-4">
             <p
               className="flex items-center gap-2 text-gray-800
@@ -67,7 +68,7 @@ function Ecommerce() {
               <span>
                 <GoDotFill />
               </span>
-              <span>Expense</span>
+              <span className='dark:text-gray-400'>Expense</span>
             </p>
             <p
               className="flex items-center gap-2 text-green-400
@@ -91,27 +92,27 @@ function Ecommerce() {
                   23%
                 </span>
               </p>
-              <p className="text-gray-500 mt-1">Budget</p>
+              <p className="text-gray-500 mt-1 dark:text-gray-400">Budget</p>
             </div>
             <div className="mt-2">
-              <p className="text-2xl text-gray-500  font-semibold">$48,487</p>
-              <p className="text-gray-500 mt-1">Expense</p>
+              <p className="text-2xl text-gray-500  font-semibold dark:text-gray-400">$48,487</p>
+              <p className="text-gray-500 mt-1 dark:text-gray-400">Expense</p>
             </div>
             <div className="mt-2">
               <SparkLine
-                currentColor="blue"
+                currentColor={currentColor}
                 id="line-sparkLine"
                 type="Line"
                 height="60px"
                 width="250px"
                 data={SparklineAreaData}
-                color="blue"
+                color={currentColor}
               />
             </div>
             <div className="mt-8">
                 <Button
                   color="white"
-                  bgColor="blue"
+                  bgColor={currentColor}
                   text="Download Report"
                   borderRadius="10px"
                 />

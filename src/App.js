@@ -7,9 +7,9 @@ import {Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kan
 import './App.css'
 import { useStateContext } from './contexts/ContextProvider.js'
 const App = () => {
-  const {activeMenu} = useStateContext();
+  const { currentColor,activeMenu, themeSettings,currentMode, setThemeSettings} = useStateContext();
   return (
-    <div>
+    <div className={currentMode == 'Dark' ? 'dark' : ''}>
       <BrowserRouter>
         <div className="flex relative dark:bg-main-dark-bg">
           <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
@@ -18,8 +18,8 @@ const App = () => {
                 type="button"
                 className="text-2xl p-3
               hover:drop-shadow-xl hover:bg-light-gray text-white"
-                style={{ backgroundColor: "blue", borderRadius: "50%" }}
-              >
+                style={{ backgroundColor: currentColor, borderRadius: "50%" }}
+             onClick={() => setThemeSettings(true)} >
                 <FiSettings />
               </button>
             </TooltipComponent>
@@ -46,6 +46,8 @@ const App = () => {
                </div>
           
           <div>
+
+            {themeSettings && <ThemeSettings/>}
             <Routes>
 
               {/* Dashboard */}
