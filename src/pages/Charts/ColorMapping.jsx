@@ -1,9 +1,50 @@
-import React from 'react'
+import React from 'react';
+import { ChartComponent, SeriesCollectionDirective, SeriesDirective, Inject, ColumnSeries, Category, Tooltip, Legend, RangeColorSettingsDirective, RangeColorSettingDirective } from '@syncfusion/ej2-react-charts';
 
-function ColorMapping() {
+import { colorMappingData, ColorMappingPrimaryXAxis, ColorMappingPrimaryYAxis, rangeColorMapping } from '../../data/dummy';
+import { ChartsHeader } from '../../components';
+import { useStateContext } from '../../contexts/ContextProvider';
+
+const ColorMapping = () => {
+  const { currentMode } = useStateContext();
+
   return (
-    <div>ColorMapping</div>
-  )
-}
+    <div className="m-4 md:m-2 mt-20 p-3 bg-white dark:bg-secondary-dark-bg rounded-3xl">
+      <ChartsHeader category="Color Mappping" title="USA CLIMATE - WEATHER BY MONTH" />
+      <div className="w-full">
+        <ChartComponent
+          id="charts"
+          primaryXAxis={ColorMappingPrimaryXAxis}
+          primaryYAxis={ColorMappingPrimaryYAxis}
+          chartArea={{ border: { width: 0 } }}
+          legendSettings={{ mode: 'Range', background: 'white' }}
+          tooltip={{ enable: true }}
+          background={currentMode === 'Dark' ? '#33373E' : '#fff'}
+          width='95%'
+          height='80%'
+        >
+          <Inject services={[ColumnSeries, Tooltip, Category, Legend]} />
+          <SeriesCollectionDirective>
+            <SeriesDirective
+              dataSource={colorMappingData[0]}
+              name="USA"
+              xName="x"
+              yName="y"
+              type="Column"
+              cornerRadius={{
+                topLeft: 10,
+                topRight: 10,
+              }}
+            />
+          </SeriesCollectionDirective>
+          <RangeColorSettingsDirective>
+            {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+            {rangeColorMapping.map((item, index) => <RangeColorSettingDirective key={index} {...item} />)}
+          </RangeColorSettingsDirective>
+        </ChartComponent>
+      </div>
+    </div>
+  );
+};
 
-export default ColorMapping
+export default ColorMapping;

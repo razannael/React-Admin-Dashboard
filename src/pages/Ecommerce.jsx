@@ -94,22 +94,22 @@ function Ecommerce() {
               </p>
               <p className="text-gray-500 mt-1 dark:text-gray-400">Budget</p>
             </div>
-            <div className="mt-2">
+            <div className="mt-1">
               <p className="text-2xl text-gray-500  font-semibold dark:text-gray-400">$48,487</p>
               <p className="text-gray-500 mt-1 dark:text-gray-400">Expense</p>
             </div>
-            <div className="mt-2">
+            <div className="mt-1">
               <SparkLine
                 currentColor={currentColor}
                 id="line-sparkLine"
                 type="Line"
-                height="60px"
+                height="50px"
                 width="250px"
                 data={SparklineAreaData}
                 color={currentColor}
               />
             </div>
-            <div className="mt-8">
+            <div className="mt-5">
                 <Button
                   color="white"
                   bgColor={currentColor}
@@ -119,7 +119,7 @@ function Ecommerce() {
               </div>
           </div>
           <div>
-            <Stacked width="320" height="310"/>
+            <Stacked width="320" height="280"/>
           </div>
         </div>
       </div>
